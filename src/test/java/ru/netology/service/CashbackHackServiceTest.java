@@ -8,6 +8,11 @@ public class CashbackHackServiceTest {
     private final CashbackHackService cashbackHackService = new CashbackHackService();
 
     @Test
+    public void checkNegativeAmount() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> cashbackHackService.remain(-1));
+    }
+
+    @Test
     public void checkZeroAmount() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> cashbackHackService.remain(0));
     }
