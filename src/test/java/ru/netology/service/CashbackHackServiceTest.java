@@ -9,7 +9,7 @@ public class CashbackHackServiceTest {
 
     @Test
     public void checkZeroAmount() {
-        Assertions.assertEquals(1000, cashbackHackService.remain(0));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> cashbackHackService.remain(0));
     }
 
     @Test
